@@ -21,6 +21,7 @@ say() {
 
 CACHE="$HOME/.cache/wifi-menu.txt"
 TMPF="$HOME/.cache/wifi-menu.tmp"
+IMW="$HOME/.config/sway/scripts/fuzzel-wrap.sh"
 
 # Quet ngam cap nhat cache cho lan mo sau (khong bao gio cho)
 (nmcli device wifi rescan >/dev/null 2>&1; sleep 3; nmcli -f IN-USE,SSID,SIGNAL dev wifi list 2>/dev/null | tail -n +2 > "$TMPF"; if [ -s "$TMPF" ]; then mv "$TMPF" "$CACHE"; fi) &
@@ -38,7 +39,7 @@ if [ -z "$SCAN" ]; then
     exit 0
 fi
 
-CHOICE=$(printf "%s\n" "$SCAN" | awk "{ sig=\$NF; \$NF=\"\"; ssid=\$0; gsub(/^ +| +\$/, \"\", ssid); if (ssid!=\"\" && ssid!=\"*\") printf \"%03d %s  %s%%\n\", sig, ssid, sig }" | sort -r | uniq | sed "s/^[0-9]* //" | fuzzel --dmenu --prompt="WiFi: ")
+CHOICE=$(printf "%s\n" "$SCAN" | awk "{ sig=\$NF; \$NF=\"\"; ssid=\$0; gsub(/^ +| +\$/, \"\", ssid); if (ssid!=\"\" && ssid!=\"*\") printf \"%03d %s  %s%%\n\", sig, ssid, sig }" | sort -r | uniq | sed "s/^[0-9]* //" | "$IMW" --dmenu --prompt="WiFi: ")
 [ -z "$CHOICE" ] && exit 0
 
 SSID=${CHOICE%  *}
@@ -59,7 +60,7 @@ OUT=$(nmcli device wifi connect "$SSID" 2>&1)
 
 # Mang khoa ma chua co mat khau -> hoi bang fuzzel (ky tu che dau *)
 if printf "%s" "$OUT" | grep -qi "secrets\|password"; then
-    PW=$(fuzzel --dmenu --password --prompt="Mat khau $SSID: " </dev/null)
+    PW=$("$IMW" --dmenu --password --prompt="Mat khau $SSID: " </dev/null)
     [ -z "$PW" ] && exit 0
     OUT=$(nmcli device wifi connect "$SSID" password "$PW" 2>&1)
 fi

@@ -1,6 +1,7 @@
 #!/bin/sh
 # Super+/ — cheat sheet keybindings phan nhom, chu thich tieng Viet
-cat <<EOF | fuzzel --dmenu --prompt="Keybinds: " 2>/dev/null
+IMW="$HOME/.config/sway/scripts/fuzzel-wrap.sh"
+cat <<EOF | "$IMW" --dmenu --prompt="Keybinds: " 2>/dev/null
 ─────────── ỨNG DỤNG ───────────
 Super+Enter          Mở terminal (foot)
 Super+D              Mở launcher ứng dụng (fuzzel)

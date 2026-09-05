@@ -13,4 +13,4 @@ if [ -n "$OLDEST" ]; then
     pkill -x fuzzel 2>/dev/null
     sleep 0.2
 fi
-exec fuzzel
+exec "$HOME/.config/sway/scripts/fuzzel-wrap.sh"
