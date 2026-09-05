@@ -16,11 +16,8 @@ Super+Shift+Space    Bật/tắt chế độ nổi (floating)
 Super+Space          Nhảy giữa window nổi và window thường
 Giữ Super + kéo      Rê window (tự nổi khi kéo)
 Super+A              Focus lên nhóm window cha
-─────────── FOCUS (kiểu vim) ───────────
-Super+H  hoặc ←      Focus sang trái
-Super+J  hoặc ↓      Focus xuống dưới
-Super+K  hoặc ↑      Focus lên trên
-Super+L  hoặc →      Focus sang phải
+─────────── FOCUS (phím mũi tên) ───────────
+← ↓ ↑ →              Focus trái/xuống/lên/phải
 ─────────── DI CHUYỂN WINDOW ───────────
 Super+Shift+H/J/K/L  Dời window trái/xuống/lên/phải
 Super+Shift+1..0     Đưa window sang workspace 1-10
