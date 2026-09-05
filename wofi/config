@@ -1,0 +1,12 @@
+# wofi — Tokyo Night
+show=drun
+prompt=Tìm app...
+allow_images=true
+image_size=24
+insensitive=true
+hide_scroll=true
+width=560
+height=380
+term=foot
+no_actions=true
+key_expand=Tab

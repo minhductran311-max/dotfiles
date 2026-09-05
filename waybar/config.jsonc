@@ -1,0 +1,34 @@
+// Waybar — Tokyo Night, siêu tối giản
+// Chỉ: workspaces (trái) + giờ (giữa) + tray (phải), nền trong suốt
+{
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "spacing": 0,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %d/%m}",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 60
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    }
+}

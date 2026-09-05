@@ -1,0 +1,41 @@
+# swaylock-effects — Tokyo Night
+# Blur màn hình hiện tại + đồng hồ. Yêu cầu gói AUR: swaylock-effects
+#
+# screenshots  = tự chụp màn hình hiện tại làm nền (không cần file wallpaper)
+# effect-blur  = độ mờ WIDTHxHEIGHT
+# fade-in      = hiệu ứng mờ dần vào
+
+screenshots
+effect-blur=6x2
+fade-in
+scaling=fill
+ignore-empty-password
+
+clock
+timestr=%H:%M
+datestr=%A, %d %B
+font=JetBrainsMono Nerd Font
+timestr-size=72
+datestr-size=18
+
+indicator
+indicator-radius=90
+indicator-thickness=8
+text-color=c0caf5
+text-ver-color=c0caf5
+text-wrong-color=f7768e
+
+ring-color=292e42
+ring-ver-color=7aa2f7
+ring-clear-color=292e42
+ring-wrong-color=f7768e
+key-hl-color=9ece6a
+bs-hl-color=f7768e
+
+inside-color=1a1b26d9
+inside-ver-color=1a1b26d9
+inside-clear-color=1a1b26d9
+inside-wrong-color=1a1b26d9
+
+line-color=00000000
+separator-color=00000000
