@@ -1,5 +1,19 @@
 #!/bin/sh
 # Super+/ — cheat sheet keybindings phan nhom, chu thich tieng Viet
+# 1 cua so duy nhat: co fuzzel khac mo qua 1s -> dong va mo thay; nhanh hon 1s -> bo qua
+
+OLDEST=$(pgrep -x fuzzel | head -n1)
+if [ -n "$OLDEST" ]; then
+    NOW=$(date +%s)
+    START=$(stat -c %Y "/proc/$OLDEST" 2>/dev/null || echo "$NOW")
+    AGE=$((NOW - START))
+    if [ "$AGE" -lt 1 ]; then
+        exit 0
+    fi
+    pkill -x fuzzel 2>/dev/null
+    sleep 0.2
+fi
+
 IMW="$HOME/.config/sway/scripts/fuzzel-wrap.sh"
 cat <<EOF | "$IMW" --dmenu --prompt="Keybinds: " 2>/dev/null
 ─────────── ỨNG DỤNG ───────────
