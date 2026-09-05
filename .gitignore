@@ -12,3 +12,4 @@
 **/*secret*
 **/*passw*
 **/env*
+*.bak*
