@@ -1,9 +1,9 @@
 #!/bin/sh
 # Super+/ — cheat sheet keybindings phan nhom, chu thich tieng Viet
-cat <<EOF | wofi --dmenu --prompt "Keybinds" 2>/dev/null
+cat <<EOF | fuzzel --dmenu --prompt="Keybinds: " 2>/dev/null
 ─────────── ỨNG DỤNG ───────────
 Super+Enter          Mở terminal (foot)
-Super+D              Mở launcher ứng dụng (wofi)
+Super+D              Mở launcher ứng dụng (fuzzel)
 Super+B              Mở trình duyệt Thorium
 Super+N              Quản lý wifi / mạng
 Super+M              Quản lý bluetooth (ghép đôi tai nghe...)
