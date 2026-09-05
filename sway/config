@@ -36,7 +36,6 @@ input type:touchpad {
     tap enabled
     natural_scroll enabled
 }
-seat seat0 hide_cursor 3000
 
 # ---- Appearance ----------------------------------------------------------------
 font pango:JetBrainsMono Nerd Font 10
