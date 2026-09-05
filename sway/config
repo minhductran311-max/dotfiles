@@ -112,7 +112,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Layout
-bindsym $mod+b splith
+# bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+f fullscreen toggle
 bindsym $mod+a focus parent
