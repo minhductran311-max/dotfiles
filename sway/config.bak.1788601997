@@ -196,6 +196,6 @@ floating_modifier $mod normal
 include ~/.config/sway/config.d/*
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
-bindsym $mod+b exec thorium-browser
-bindsym $mod+Shift+b splith
+exec fcitx5 -d --replace
+# Xem toan bo keybinds
 bindsym $mod+slash exec ~/.config/sway/scripts/keybinds.sh

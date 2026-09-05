@@ -1,5 +1,14 @@
+/*
+!/.gitignore
+!/sway
+!/waybar
+!/foot
+!/wofi
+!/mako
+!/README.md
+!/install.sh
+!/packages.txt
 **/*token*
 **/*secret*
 **/*passw*
 **/env*
-ssh/
