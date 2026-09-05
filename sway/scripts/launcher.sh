@@ -1,15 +1,16 @@
 #!/bin/sh
-# launcher.sh - Mod+D: mo wofi; bam lan nua khi dang mo lau hon 1s -> dong (toggle)
-# Bam lien tuc nhanh hon 1s se duoc bo qua -> khong bao gio mo nhieu cua so dai nhau
+# launcher.sh - Mod+D: mo wofi drun; co wofi khac dang mo lau hon 1s -> dong va mo thay
+# Bam lien tuc nhanh hon 1s -> bo qua -> khong bao gio mo nhieu cua so dai nhau
 
 OLDEST=$(pgrep -x wofi | head -n1)
 if [ -n "$OLDEST" ]; then
     NOW=$(date +%s)
     START=$(stat -c %Y "/proc/$OLDEST" 2>/dev/null || echo "$NOW")
     AGE=$((NOW - START))
-    if [ "$AGE" -ge 1 ]; then
-        pkill -x wofi 2>/dev/null
+    if [ "$AGE" -lt 1 ]; then
+        exit 0
     fi
-    exit 0
+    pkill -x wofi 2>/dev/null
+    sleep 0.2
 fi
 exec wofi --show drun
