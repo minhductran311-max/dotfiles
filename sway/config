@@ -199,3 +199,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+b exec thorium-browser
 bindsym $mod+Shift+b splith
 bindsym $mod+slash exec ~/.config/sway/scripts/keybinds.sh
+# Quan ly mang & bluetooth
+bindsym $mod+n exec nm-connection-editor
+bindsym $mod+m exec blueman-manager

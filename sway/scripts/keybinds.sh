@@ -5,6 +5,8 @@ cat <<EOF | wofi --dmenu --prompt "Keybinds" 2>/dev/null
 Super+Enter          Mở terminal (foot)
 Super+D              Mở launcher ứng dụng (wofi)
 Super+B              Mở trình duyệt Thorium
+Super+N              Quản lý wifi / mạng
+Super+M              Quản lý bluetooth (ghép đôi tai nghe...)
 Super+C              Lịch sử clipboard — chọn mục để copy lại
 Super+/              Bảng phím tắt này
 ─────────── CỬA SỔ ───────────

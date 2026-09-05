@@ -1,34 +1,86 @@
-// Waybar — Tokyo Night, siêu tối giản
-// Chỉ: workspaces (trái) + giờ (giữa) + tray (phải), nền trong suốt
 {
     "layer": "top",
     "position": "top",
     "height": 28,
     "spacing": 0,
-
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray"],
-
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        "battery"
+    ],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{name}"
     },
-
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-
     "clock": {
         "format": "{:%H:%M}",
         "format-alt": "{:%a %d/%m}",
         "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 60
     },
-
     "tray": {
         "icon-size": 14,
         "spacing": 8
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip-format": "{capacity}% ({timeTo})"
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}",
+        "format-linked": " no IP",
+        "format-disconnected": " off",
+        "tooltip-format-wifi": "{essid}\nTin hieu: {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": {
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -ui 2",
+        "on-scroll-down": "pamixer -ud 2"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-off": "",
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{controller_alias}",
+        "tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
+        "on-click": "blueman-manager"
     }
 }

@@ -1,4 +1,4 @@
-/* Waybar — Tokyo Night, siêu tối giản, nền trong suốt */
+/* Waybar - Tokyo Night, toi gian, nen trong suot */
 
 * {
     font-family: "JetBrainsMono Nerd Font";
@@ -73,6 +73,41 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #f7768e;
+}
+
+/* Module he thong: bluetooth / mang / am luong / pin */
+#bluetooth,
+#network,
+#pulseaudio,
+#battery {
+    background: transparent;
+    color: #a9b1d6;
+    margin: 0 2px;
+    padding: 0 8px;
+}
+
+#bluetooth {
+    color: #7aa2f7;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning {
+    color: #e0af68;
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+}
+
+#network.disconnected {
+    color: #f7768e;
 }
 
 /* Tooltip */
